@@ -1,0 +1,2 @@
+#Овој филтер овозможува селектирање на сите универзитети од .osm фајлот и зачувување во universities.csv
+osmfilter macedonia.osm --keep="amenity=university" | osmconvert64-0.8.8p.exe - --all-to-nodes --csv="@id @lat @lon name location opening_hours" --csv-headline --csv-separator="," -o="universities.csv"
