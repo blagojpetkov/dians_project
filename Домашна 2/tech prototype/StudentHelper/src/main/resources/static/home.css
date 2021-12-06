@@ -13,6 +13,7 @@
     margin-top: 10px;
 }
 #sidebar{
+    z-index: 30;
     position: absolute;
     top: 70px;
     left: 20px;
@@ -41,6 +42,9 @@ footer{
 }
 footer p {
     margin: 8px;
+}
+div a{
+    margin: 5px;
 }
 button{
     margin: 5px;

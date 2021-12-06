@@ -1,0 +1,68 @@
+#container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.card{
+    margin-top: 100px;
+}
+#hamburger{
+    margin-left: 10px;
+    margin-top: 0;
+}
+#title{
+    font-size: 20px;
+    font-family: 'Century Gothic', serif;
+    color: white;
+    margin-top: 10px;
+}
+#sidebar{
+    z-index: 3;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    height: 600px;
+    width: 280px;
+    background-color: white;
+}
+#profile{
+    margin-top: 4px;
+    margin-left: 5px;
+}
+header{
+    height: 50px;
+    background-color: #413946;
+    display: flex;
+    justify-content: space-between;
+}
+footer{
+    margin-top: 144px;
+    display: flex;
+    height: 42px;
+    justify-content: space-evenly;
+    background-color: #413946;
+    font-family: "Century Gothic", serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+}
+footer p {
+    margin: 8px;
+}
+div a{
+    margin: 5px;
+}
+button{
+    margin: 5px;
+}
+
+
+
+@keyframes mymove {
+    50% {transform: rotate(90deg);}
+}
+
+.rotate {
+    animation: mymove 1.5s;
+}
