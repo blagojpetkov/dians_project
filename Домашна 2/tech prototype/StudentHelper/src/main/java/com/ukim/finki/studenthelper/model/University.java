@@ -7,12 +7,15 @@ public class University {
     public String name;
     public String type;
     public String hours;
+    public String website;
+    public String imageUrl;
 
-    public University(Long id, double latitude, double longitude, String name, String type) {
+
+    public University(Long id, double latitude, double longitude, String name, String imageUrl) {
         this.id = id;
         this.latitude = latitude;
         this.longitude = longitude;
         this.name = name;
-        this.type = type;
+        this.imageUrl = imageUrl;
     }
 }

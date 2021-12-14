@@ -6,6 +6,7 @@ import com.ukim.finki.studenthelper.service.UniversityService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UniversityServiceImpl implements UniversityService {
@@ -16,8 +17,8 @@ public class UniversityServiceImpl implements UniversityService {
     }
 
     @Override
-    public University getUniversityById(Long id) {
-        return repository.getUniversityById(id).orElse(null);
+    public Optional<University> getUniversityById(Long id) {
+        return repository.getUniversityById(id);
     }
 
     @Override

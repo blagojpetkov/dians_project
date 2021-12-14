@@ -1,10 +1,19 @@
-#map {
-    height: 630px;
-    margin: 20px;
+header{
+    height: 50px;
+    background-color: #413946;
+    display: flex;
+    justify-content: space-between;
 }
-#hamburger{
-    margin-left: 10px;
-    margin-top: 0;
+
+@keyframes mymove {
+    50% {transform: rotate(90deg);}
+}
+
+.rotate {
+    animation: mymove 1.5s;
+}
+div a{
+    margin: 5px;
 }
 #title{
     font-size: 20px;
@@ -12,25 +21,38 @@
     color: white;
     margin-top: 10px;
 }
+#hamburger{
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+
+
+
 #sidebar{
-    z-index: 30;
+    z-index: 3;
     position: absolute;
-    top: 70px;
-    left: 20px;
+    top: 50px;
+    left: 0;
     height: 600px;
     width: 280px;
+    background-color: white;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 #profile{
     margin-top: 4px;
     margin-left: 5px;
 }
-header{
-    height: 50px;
-    background-color: #413946;
-    display: flex;
-    justify-content: space-between;
+button{
+    margin: 5px;
 }
+
+
+
+
 footer{
+    margin-top: 144px;
     display: flex;
     height: 42px;
     justify-content: space-evenly;
@@ -42,25 +64,4 @@ footer{
 }
 footer p {
     margin: 8px;
-}
-footer a {
-    text-decoration: none;
-    color: white;
-    margin: 8px;
-}
-div a{
-    margin: 5px;
-}
-button{
-    margin: 5px;
-}
-
-
-
-@keyframes mymove {
-    50% {transform: rotate(90deg);}
-}
-
-.rotate {
-    animation: mymove 1.5s;
 }

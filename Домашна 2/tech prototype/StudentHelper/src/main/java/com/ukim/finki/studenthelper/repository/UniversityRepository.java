@@ -19,7 +19,7 @@ public class UniversityRepository {
             BufferedReader br = new BufferedReader(new FileReader(f));
             return br.lines().map(x->{
                 String [] components = x.split(",");
-                return new University(Long.parseLong(components[0]), Double.parseDouble(components[1]), Double.parseDouble(components[2]), components[3], "university");
+                return new University(Long.parseLong(components[0]), Double.parseDouble(components[1]), Double.parseDouble(components[2]), components[3], components.length>=5?components[4]:"unimplemented");
             }).collect(Collectors.toList());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
