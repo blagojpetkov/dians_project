@@ -113,3 +113,9 @@ h6{
     display: flex;
     justify-content: center;
 }
+
+.info{
+    font-weight: bold;
+    color: #413946;
+    margin-left: 50px;
+}
