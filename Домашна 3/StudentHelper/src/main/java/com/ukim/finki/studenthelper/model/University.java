@@ -36,6 +36,5 @@ public class University {
         this.type = type;
         this.location = location;
         this.professors = Arrays.stream(unparsedProfessors.split("\\.")).collect(Collectors.toList());
-        System.out.println(professors);
     }
 }
