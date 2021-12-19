@@ -24,6 +24,7 @@ loadUniversities();
 //search by keyword
 async function keyword(){
     let value = document.getElementById("keyword").value;
+    if(value==="") return
     const url = "/universities/keyword/" + value;
     let items = await fetch(url);
     let parsed = await items.json();
@@ -74,6 +75,14 @@ async function getMapInfo(profile, start, end){
     if(profile==="driving-car") L.polyline(points, { color: '#b41238', opacity: 1, weight: 5 }).addTo(markerLayer);
     if(profile==="cycling-regular") L.polyline(points, { color: '#1222c7', opacity: 1, weight: 5 }).addTo(markerLayer);
     if(profile==="wheelchair") L.polyline(points, { color: '#ffb600', opacity: 1, weight: 5 }).addTo(markerLayer);
+
+    let distance = data.features[0].properties.summary.distance;
+    let duration = data.features[0].properties.summary.duration;
+    document.getElementById("instructions").hidden = true;
+    document.getElementById("information").hidden = false;
+    document.getElementById("distance").innerHTML = "Растојанието од вас до универзитетот изнесува " + (distance/1000).toFixed(1) + " километри."
+    document.getElementById("duration").innerHTML = "Времето за да стигнете до избраниот универзитет изнесува " + (duration/60).toFixed(0) + " минути."
+
 }
 
 
@@ -100,7 +109,6 @@ function search(){
     }
 }
 
-
 document.getElementById("keyword")
     .addEventListener("keyup", function(event) {
         event.preventDefault();
@@ -108,23 +116,3 @@ document.getElementById("keyword")
             document.getElementById("keywordbutton").click();
         }
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var user = L.marker();
-// map.on('click', onMapClick);
-// function onMapClick(e) {
-//     user.setLatLng(e.latlng).addTo(map);
-// }
-
