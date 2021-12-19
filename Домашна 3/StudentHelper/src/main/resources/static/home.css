@@ -20,6 +20,13 @@
     height: 600px;
     width: 280px;
 }
+#sidebar p{
+    font-size: 14px;
+}
+
+#sidebar button {
+    width: 100%;
+}
 #profile{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -59,19 +66,25 @@ div a{
     margin: 5px;
 }
 
-#sidebar p{
-    font-size: 14px;
-}
-
-#sidebar button {
-    width: 100%;
-}
-
-
 @keyframes mymove {
     50% {transform: rotate(90deg);}
 }
 
 .rotate {
     animation: mymove 1.5s;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+    #map{
+        height: 75vh;
+    }
+    footer *{
+        font-size: 20px;
+    }
+    footer{
+        flex-direction: column;
+        height: 20vh;
+    }
 }

@@ -23,24 +23,27 @@
 </header>
 <div id="sidebar" hidden>
     <button class="btn btn-outline-dark" onclick="geolocation()" id="getl">Најди ја мојата локација</button><br>
-    <select id="profile">
-        <option value="foot-walking">Пешачење</option>
+    <select class="form-select" id="profile">
         <option value="driving-car">Автомобил</option>
+        <option value="foot-walking">Пешачење</option>
         <option value="cycling-regular">Велосипед</option>
         <option value="wheelchair">Инвалидска количка</option>
     </select>
-    <button disabled class="btn btn-outline-dark" onclick="search()" id="search">Пронајди рута</button><br>
+    <button class="btn btn-outline-dark" onclick="search()" id="search" disabled>Пронајди рута</button><br>
     <br><br>
-    <h4>Упатство за употреба:</h4>
-    <br>
-    <p>Избери универзитет од мапата</p>
-    <p>Притисни на <strong>Најди ја мојата локација</strong></p>
-    <p>Дозволи пристап до твојата локација</p>
-    <p>Избери една од опциите за превоз</p>
-    <p>Притисни <strong>Пронајди рута</strong></p>
+    <div id="instructions">
+        <h6>Упатство за употреба:</h6>
+        <br>
+        <p>Избери универзитет од мапата</p>
+        <p>Притисни на <strong>Најди ја мојата локација</strong></p>
+        <p>Дозволи пристап до твојата локација</p>
+        <p>Избери една од опциите за превоз</p>
+        <p>Притисни <strong>Пронајди рута</strong></p>
+    </div>
+    <br><br>
     <h4>Прикажи установи според клучен збор</h4>
-    <input disabled type="text" style="margin-left: 5px; width: 245px;" id="keyword">
-    <button disabled class="btn btn-outline-dark" onclick="keyword()">Пребарај според клучен збор</button>
+    <input type="text" class="form-control" id="keyword" placeholder="Машински, Скопје, Медицина...">
+    <button id="keywordbutton" class="btn btn-outline-dark" onclick="keyword()">Пребарај според клучен збор</button>
 </div>
 <div id="container">
 <div id="left">
@@ -64,9 +67,9 @@
 <div id="right">
     <div id="map"></div>
     <div id="information" hidden>
-        <h4>Информации за рутата кон универзитетот</h4>
-        <h6 id="distance"></h6>
-        <h6 id="duration"></h6>
+        <h6>Информации за рутата кон универзитетот</h6>
+        <p id="distance"></p>
+        <p id="duration"></p>
     </div>
 </div>
 </div>

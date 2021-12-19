@@ -8,49 +8,6 @@
     <link rel="stylesheet" href="/detailed.css">
 </head>
 <body>
-<header>
-    <img id="hamburger" src="/hamburger.png" onclick="hamburgerClick()" height="50px">
-    <a style="text-decoration: none;" href="/home"><p id="title">STUDENT HELPER</p></a>
-    <div><a id="home" href="/home" class="btn btn-outline-light">Home</a><a id="about" href="/home/about" class="btn btn-outline-light">About</a></div>
-</header>
-<div id="sidebar" hidden>
-    <button disabled class="btn btn-outline-dark" onclick="geolocation()" id="getl">Најди ја мојата локација</button><br>
-    <button disabled class="btn btn-outline-dark" onclick="search()" id="search">Пронајди рута</button><br>
-    <select id="profile" disabled>
-        <option value="foot-walking">Пешачење</option>
-        <option value="driving-car">Автомобил</option>
-        <option value="cycling-regular">Велосипед</option>
-        <option value="wheelchair">Инвалидска количка</option>
-    </select>
-    <br><br>
-    <h4>Упатство за употреба:</h4>
-    <br>
-    <p>Притисни на <strong>Најди ја мојата локација</strong></p>
-    <p>Дозволи пристап до твојата локација</p>
-    <p>Избери една од опциите за превоз</p>
-    <p>Притисни <strong>Пронајди рута</strong></p>
-    <h4>Прикажи установи според клучен збор</h4>
-    <input disabled type="text" style="margin-left: 5px; width: 245px;" id="keyword">
-    <button disabled class="btn btn-outline-dark" onclick="keyword()">Пребарај според клучен збор</button>
-</div>
-
-
-
-
-
-<h1 th:text="${university.name}"></h1>
-<img height="100px" th:src="${university.imageUrl}">
-<div th:text="${university.type}"></div>
-<div th:text="${university.location}"></div>
-
-<footer>
-    <a href="/home/about">About us</a>
-    <a href="/home/about">Contact</a>
-    <p>© 2021 Copyright: StudentHelper</p>
-    <a href="/home/about">Information about the site</a>
-    <a href="/home/language/mk">Македонски</a>
-    <a href="/home/language/en">English</a>
-</footer>
 <script src="/detailed.js"></script>
 </body>
 </html>
