@@ -1,11 +1,13 @@
 #container{
     display: flex;
+    width: 100%;
     justify-content: space-evenly;
-    flex-direction: row;
 }
-
 .card{
     margin-top: 100px;
+}
+.card a{
+    width: 96%;
 }
 #hamburger{
     margin-left: 10px;
@@ -25,10 +27,15 @@
     height: 600px;
     width: 280px;
     background-color: white;
+
+    padding-right: 20px;
+}
+#sidebar button {
+    width: 100%;
 }
 #profile{
-    margin-top: 4px;
-    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 header{
     height: 50px;
@@ -36,8 +43,12 @@ header{
     display: flex;
     justify-content: space-between;
 }
+
+#sidebar p{
+    font-size: 14px;
+}
+
 footer{
-    margin-top: 144px;
     display: flex;
     height: 42px;
     justify-content: space-evenly;
@@ -63,9 +74,6 @@ footer a {
 div a{
     margin: 5px;
 }
-button{
-    margin: 5px;
-}
 
 
 
@@ -76,3 +84,22 @@ button{
 .rotate {
     animation: mymove 1.5s;
 }
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+    #container{
+        align-items: center;
+        height: 70vh;
+    }
+
+    footer *{
+        font-size: 20px;
+    }
+    footer{
+        flex-direction: column;
+        height: 20vh;
+    }
+}
+

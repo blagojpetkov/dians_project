@@ -64,7 +64,7 @@ async function getMapInfo(profile, start, end){
 
     let distance = data.features[0].properties.summary.distance;
     let duration = data.features[0].properties.summary.duration;
-    document.getElementById("information").hidden = false;
     document.getElementById("distance").innerHTML = "Растојанието од вас до универзитетот изнесува " + (distance/1000).toFixed(1) + " километри."
     document.getElementById("duration").innerHTML = "Времето за да стигнете до избраниот универзитет изнесува " + (duration/60).toFixed(0) + " минути."
+    document.getElementById("information").hidden = false;
 }

@@ -25,22 +25,33 @@
 </header>
 <div id="sidebar" hidden>
     <button class="btn btn-outline-dark" onclick="geolocation()" id="getl">Најди ја мојата локација</button><br>
-    <button class="btn btn-outline-dark" onclick="search()" id="search" disabled>Пронајди рута</button><br>
-    <select id="profile">
-        <option value="foot-walking">Пешачење</option>
+    <select class="form-select" id="profile">
         <option value="driving-car">Автомобил</option>
+        <option value="foot-walking">Пешачење</option>
         <option value="cycling-regular">Велосипед</option>
         <option value="wheelchair">Инвалидска количка</option>
     </select>
+    <button class="btn btn-outline-dark" onclick="search()" id="search" disabled>Пронајди рута</button><br>
     <br><br>
-    <h4>Упатство за употреба:</h4>
+    <div id="instructions">
+    <h6>Упатство за употреба:</h6>
     <br>
+    <p>Избери универзитет од мапата</p>
     <p>Притисни на <strong>Најди ја мојата локација</strong></p>
     <p>Дозволи пристап до твојата локација</p>
     <p>Избери една од опциите за превоз</p>
     <p>Притисни <strong>Пронајди рута</strong></p>
+    </div>
+    <div id="information" hidden>
+        <h4>Информации за рутата кон универзитетот</h4>
+        <br>
+        <h6 id="distance"></h6>
+        <h6 id="duration"></h6>
+        <br>
+    </div>
+    <br><br>
     <h4>Прикажи установи според клучен збор</h4>
-    <input type="text" style="margin-left: 5px; width: 245px;" id="keyword">
+    <input type="text" class="form-control" id="keyword" placeholder="Машински, Скопје, Медицина...">
     <button id="keywordbutton" class="btn btn-outline-dark" onclick="keyword()">Пребарај според клучен збор</button>
 </div>
 
