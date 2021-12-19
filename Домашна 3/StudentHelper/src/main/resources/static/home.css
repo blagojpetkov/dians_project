@@ -66,7 +66,6 @@ div a{
     margin: 5px;
 }
 
-
 @keyframes mymove {
     50% {transform: rotate(90deg);}
 }
