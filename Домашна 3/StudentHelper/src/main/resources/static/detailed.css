@@ -44,8 +44,14 @@ div a{
     margin-top: 4px;
     margin-left: 5px;
 }
+#search{
+    margin-top: 9px;
+}
 button{
     margin: 5px;
+}
+#sidebar p{
+    font-size: 14px;
 }
 
 

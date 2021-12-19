@@ -30,12 +30,20 @@
     margin-top: 4px;
     margin-left: 5px;
 }
+#search{
+    margin-top: 9px;
+}
 header{
     height: 50px;
     background-color: #413946;
     display: flex;
     justify-content: space-between;
 }
+
+#sidebar p{
+    font-size: 14px;
+}
+
 footer{
     margin-top: 144px;
     display: flex;
