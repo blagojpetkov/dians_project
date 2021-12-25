@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -18,8 +19,13 @@ public class UniversityRepository {
         try {
             BufferedReader br = new BufferedReader(new FileReader(f));
             return br.lines().map(x->{
-                String [] components = x.split(",");
-                return new University(Long.parseLong(components[0]), Double.parseDouble(components[1]), Double.parseDouble(components[2]), components[3], components[4], components[5], components[6], components[7]);
+                String [] components = x.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
+                components = Arrays.stream(components).map(string->{
+                    if(string.startsWith("\"") && string.endsWith("\""))
+                        string = string.substring(1, string.length()-1);
+                    return string;
+                }).toArray(String[]::new);
+                return new University(Long.parseLong(components[0]), Double.parseDouble(components[1]), Double.parseDouble(components[2]), components[3], components[4], components[5], components[6], components[7], components[8], components[9]);
             }).collect(Collectors.toList());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -33,7 +39,7 @@ public class UniversityRepository {
 
     public List<University> getUniversitiesWithKeyword(String keyword) {
         return getAllUniversities().stream().filter(x->x.name.toLowerCase().contains(keyword.toLowerCase())
-        || x.type.toLowerCase().contains(keyword.toLowerCase()) || x.location.toLowerCase().contains(keyword.toLowerCase()))
+        || x.type.toLowerCase().contains(keyword.toLowerCase()) || x.city.toLowerCase().contains(keyword.toLowerCase()))
                 .collect(Collectors.toList());
     }
 }

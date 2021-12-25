@@ -72,7 +72,7 @@ footer{
     font-size: 15px;
     color: white;
 
-    position:absolute;
+    position:fixed;
     bottom:0;
     width:100%;
 }
@@ -117,18 +117,16 @@ and (max-device-width : 480px) {
 #container{
     display: flex;
     justify-content: center;
-    height: 700px;
+    height: 800px;
 }
 #left{
-    width: 600px;
+    width: 700px;
     border-right: 5px solid #413946;
 }
 #right{
-    width: 600px;
+    width: 700px;
 }
-#right button{
-    margin-left: 40px;
-}
+
 
 #information{
     margin-left: 40px;
@@ -145,10 +143,7 @@ h6{
     display: flex;
     justify-content: center;
 }
-
-.info{
-    font-weight: bold;
-    color: #413946;
-    margin-left: 50px;
+.description{
+    font-size: 12px;
+    margin-right: 10px;
 }
-

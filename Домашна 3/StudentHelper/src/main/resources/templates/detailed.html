@@ -50,17 +50,10 @@
     <h3 class="text-center" th:text="${university.name}"></h3>
     <div id="imgContainer"><img th:src="${university.imageUrl}"></div><br>
     <div class="info" th:text="'Категорија: ' + ${university.type}"></div>
-    <div class="info" th:text="'Локација: ' +${university.location}"></div>
-    <br><br>
-    <h5>Професори:</h5>
-    <ol class="info">
-    <li th:each="professor : ${university.professors}"><th:block th:text="${professor}"></th:block></li>
-    </ol>
-
-
-
-
-
+    <div class="info" th:text="'Град: ' +${university.city}"></div>
+    <div class="info" th:text="'Адреса: ' +${university.address}"></div><br>
+    <div class="info description" th:text="${university.description}"></div><br>
+    <div class="info description" th:text="'Професори: ' +${university.professors}"></div>
     <input type="hidden" id="latitude" th:value="${university.latitude}">
     <input type="hidden" id="longitude" th:value="${university.longitude}">
 </div>
