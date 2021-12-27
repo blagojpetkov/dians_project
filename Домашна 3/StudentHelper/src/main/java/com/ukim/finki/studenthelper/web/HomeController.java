@@ -4,12 +4,10 @@ import com.ukim.finki.studenthelper.model.University;
 import com.ukim.finki.studenthelper.repository.UniversityRepository;
 import com.ukim.finki.studenthelper.service.UniversityService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.FileNotFoundException;
@@ -84,5 +82,26 @@ public class HomeController {
         return "redirect:/home/"+id;
     }
 
+    @GetMapping("/create")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String getNewUniversityPage(HttpServletRequest request){
+        if(request.getSession().getAttribute("language")==null || request.getSession().getAttribute("language").equals("mk"))
+            return "new-university";
+        else return "new-university-en";
+    }
 
+    @PostMapping("/create")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String createNewUniversity(@RequestParam Double latitude,
+                                      @RequestParam Double longitude,
+                                      @RequestParam String name,
+                                      @RequestParam String imageUrl,
+                                      @RequestParam String type,
+                                      @RequestParam String city,
+                                      @RequestParam String address,
+                                      @RequestParam String description,
+                                      @RequestParam String professors){
+        universityService.addNewUniversityToList(latitude, longitude, name, imageUrl, type, city, address, description, professors);
+        return "redirect:/home";
+    }
 }

@@ -7,10 +7,13 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @Repository
 public class UniversityRepository {
+
+
     public List<University> getAllUniversities() {
         File f = new File("src/main/java/com/ukim/finki/studenthelper/database/universities.csv");
         try {
@@ -72,5 +75,38 @@ public class UniversityRepository {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void addNewUniversityToList(Long id, double latitude, double longitude, String name, String imageUrl, String type, String city, String address, String description, String professors) {
+
+
+
+        File f = new File("src/main/java/com/ukim/finki/studenthelper/database/universities.csv");
+        File f1 = new File("src/main/java/com/ukim/finki/studenthelper/database/universities1.csv");
+        if(f.exists()) {
+            try {
+                FileReader fileReader = new FileReader(f);
+                BufferedReader br = new BufferedReader(fileReader);
+                FileWriter writer = new FileWriter(f1);
+                String string = null;
+                while ((string = br.readLine()) != null) {
+                        writer.write(string+"\n");
+                }
+                writer.write(String.format("%d,%f,%f,%s,%s,%s,%s,\"%s\",\"%s\",\"%s\",0,0\n", id, latitude, longitude, name, imageUrl, type, city, address, description, professors));
+                fileReader.close();
+                br.close();
+                writer.close();
+                if(f.delete())
+                    System.out.println("Deleted file successfully");
+                else
+                    System.out.println("File wasn't deleted");
+                f1.renameTo(new File("src/main/java/com/ukim/finki/studenthelper/database/universities.csv"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
     }
 }

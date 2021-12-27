@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+
+    <link rel="stylesheet" href="/new-university.css">
+
+</head>
+<body>
+
+
+<header>
+    <img id="hamburger" src="/hamburger.png" onclick="hamburgerClick()" height="50px">
+    <a style="text-decoration: none;" href="/home"><p id="title">STUDENT HELPER</p></a>
+    <div><a id="home" href="/home" class="btn btn-outline-light">Дома</a><a id="about" href="/home/about" class="btn btn-outline-light">Контакт</a></div>
+</header>
+<div id="sidebar" hidden>
+    <button disabled class="btn btn-outline-dark" onclick="geolocation()" id="getl">Најди ја мојата локација</button><br>
+    <select disabled class="form-select" id="profile">
+        <option value="driving-car">Car</option>
+        <option value="foot-walking">Walking</option>
+        <option value="cycling-regular">Bicycle</option>
+        <option value="wheelchair">Wheelchair</option>
+    </select>
+    <button class="btn btn-outline-dark" onclick="search()" id="search" disabled>Find route</button><br>
+    <br><br>
+    <div id="instructions">
+        <h6>Instruction manual:</h6>
+        <br>
+        <p>Choose a university from the map</p>
+        <p>Press on <strong>Find my location</strong></p>
+        <p>Allow access to your location</p>
+        <p>Choose one of the transport options</p>
+        <p>Press <strong>Find route</strong></p>
+    </div>
+    <div id="information" hidden>
+        <h4>Information about the route to the university</h4>
+        <br>
+        <h6 id="distance"></h6>
+        <h6 id="duration"></h6>
+        <br>
+    </div>
+    <br><br>
+    <h4>Show universities by keyword</h4>
+    <input type="text" class="form-control" id="keyword" placeholder="Машински, Скопје, Медицина...">
+    <button id="keywordbutton" class="btn btn-outline-dark" onclick="keyword()">Search using a keyword</button>
+</div>
+
+
+
+<h1 class="text-center">Form for adding a new university</h1>
+<div class="container">
+<div class="left">
+<form action="/home/create" method="post">
+    <div class="form-group">
+        <label for="uniname">University name</label>
+        <input name="name" type="text" class="form-control" id="uniname" placeholder="Enter the name of the university">
+    </div>
+    <div class="form-group">
+        <label for="imgurl">Image URL</label>
+        <input name="imageUrl" type="text" class="form-control" id="imgurl" placeholder="Enter image URL">
+    </div>
+    <div class="form-group">
+        <label for="type">Type</label>
+        <input name="type" type="text" class="form-control" id="type" placeholder="Enter university type">
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input name="city" type="text" class="form-control" id="city" placeholder="Enter the city of the university">
+    </div>
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input name="address" type="text" class="form-control" id="address" placeholder="Enter the address of the university">
+    </div>
+    <div class="form-group">
+        <label for="desc">Description</label>
+        <input name="description" type="text" class="form-control" id="desc" placeholder="Enter the description of the university">
+    </div>
+    <div class="form-group">
+        <label for="professors">Professors</label>
+        <input name="professors" type="text" class="form-control" id="professors" placeholder="Enter the professors in the university">
+    </div>
+    <input name="latitude" type="hidden" id="latitude">
+    <input name="longitude" type="hidden" id="longitude">
+
+    <button id="submit" type="submit" class="btn btn-primary" disabled>Submit</button>
+    <a id="logout" href="/logout" class="btn btn-danger">Log out</a>
+</form>
+</div>
+<div class="right">
+    <h5 class="text-center">Choose the location of the university</h5>
+    <div id="map"></div></div>
+</div>
+<footer>
+    <a href="/home/about">Contact</a>
+    <p>© 2021 Copyright: StudentHelper</p>
+    <a href="/home/about">Information about the site</a>
+    <a href="/home/language/mk">Македонски</a>
+    <a href="/home/language/en">English</a>
+</footer>
+<script src="/new-university.js"></script>
+</body>
+</html>

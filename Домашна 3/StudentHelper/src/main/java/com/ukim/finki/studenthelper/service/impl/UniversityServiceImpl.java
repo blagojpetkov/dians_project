@@ -7,13 +7,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 public class UniversityServiceImpl implements UniversityService {
     private final UniversityRepository repository;
+    private Random random;
 
     public UniversityServiceImpl(UniversityRepository repository) {
         this.repository = repository;
+        this.random = new Random();
     }
 
     @Override
@@ -34,5 +37,10 @@ public class UniversityServiceImpl implements UniversityService {
     @Override
     public void gradeUniversity(Long id, Integer grade) {
         repository.gradeUniversity(id, grade);
+    }
+
+    @Override
+    public void addNewUniversityToList(double latitude, double longitude, String name, String imageUrl, String type, String city, String address, String description, String professors) {
+        repository.addNewUniversityToList(Math.abs(random.nextLong()/10000), latitude, longitude, name, imageUrl, type, city, address, description, professors);
     }
 }
