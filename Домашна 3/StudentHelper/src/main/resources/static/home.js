@@ -31,7 +31,7 @@ async function keyword(){
     markerLayer.clearLayers();
 
     for(let item of parsed){
-        let marker = L.marker([item.latitude, item.longitude], {icon: uniicon}).addTo(markerLayer).bindPopup("<h3>"+item.name+"</h3><br><a href=/home/" + item.id + ">Click here for detailed view</a>");
+        let marker = L.marker([item.latitude, item.longitude], {icon: uniicon}).addTo(markerLayer).bindPopup("<h3>"+item.name+"</h3><br><a style='width: 290px' class='btn btn-outline-dark' href=/home/" + item.id + ">Детален поглед</a>");
         marker.on('click', () => {
             selectedUniversity = marker;
         });

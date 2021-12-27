@@ -3,6 +3,7 @@ package com.ukim.finki.studenthelper.web;
 import com.ukim.finki.studenthelper.model.University;
 import com.ukim.finki.studenthelper.repository.UniversityRepository;
 import com.ukim.finki.studenthelper.service.UniversityService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -41,6 +43,18 @@ public class HomeController {
 
     @GetMapping("/{id}")
     public String getUniversity(@PathVariable Long id, Model model, HttpServletRequest request){
+        if(request.getSession().getAttribute("uniList")!=null) {
+            List<Long> uniList = (List<Long>) request.getSession().getAttribute("uniList");
+            if(uniList.contains(id))
+            {
+                model.addAttribute("graded", true);
+            }
+            else model.addAttribute("graded", false);
+        }
+        else {
+            model.addAttribute("graded", false);
+        }
+
         if(universityService.getUniversityById(id).isPresent())
         model.addAttribute("university", universityService.getUniversityById(id).get());
         if(request.getSession().getAttribute("language")==null || request.getSession().getAttribute("language").equals("mk"))
@@ -53,5 +67,22 @@ public class HomeController {
         return "about";
         else return "about-en";
     }
+
+    @GetMapping("/grade/{id}/{grade}")
+    public String getUniversityWithId(HttpServletRequest request, @PathVariable Long id, @PathVariable Integer grade){
+         universityService.gradeUniversity(id, grade);
+         if(request.getSession().getAttribute("uniList")==null) {
+             List<Long> uniList = new ArrayList<>();
+             uniList.add(id);
+             request.getSession().setAttribute("uniList", uniList);
+         }
+         else{
+             List<Long> uniList = (List<Long>) request.getSession().getAttribute("uniList");
+             uniList.add(id);
+             request.getSession().setAttribute("uniList", uniList);
+         }
+        return "redirect:/home/"+id;
+    }
+
 
 }

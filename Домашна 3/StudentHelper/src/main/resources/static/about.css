@@ -20,7 +20,6 @@
     margin-top: 10px;
 }
 #sidebar{
-    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
     z-index: 3;
     position: absolute;
     top: 70px;
@@ -76,6 +75,9 @@ div a{
     margin: 5px;
 }
 
+#keywordbutton{
+    margin-top: 5px;
+}
 
 
 @keyframes mymove {

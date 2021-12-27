@@ -9,4 +9,5 @@ public interface UniversityService {
     Optional<University> getUniversityById(Long id);
     List<University> getAllUniversities();
     List<University> getUniversitiesWithKeyword(String keyword);
+    void gradeUniversity(Long id, Integer grade);
 }

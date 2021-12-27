@@ -12,8 +12,10 @@ public class University {
     public String address;
     public String description;
     public String professors;
+    public double grade;
+    public int evaluators;
 
-    public University(Long id, double latitude, double longitude, String name, String imageUrl, String type, String city, String address, String description, String professors) {
+    public University(Long id, double latitude, double longitude, String name, String imageUrl, String type, String city, String address, String description, String professors, String grade, String evaluators) {
         this.id = id;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -24,5 +26,7 @@ public class University {
         this.address = address;
         this.description = description;
         this.professors = professors;
+        this.grade = Double.parseDouble(grade);
+        this.evaluators = Integer.parseInt(evaluators);
     }
 }

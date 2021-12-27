@@ -30,4 +30,9 @@ public class UniversityServiceImpl implements UniversityService {
     public List<University> getUniversitiesWithKeyword(String keyword) {
         return repository.getUniversitiesWithKeyword(keyword);
     }
+
+    @Override
+    public void gradeUniversity(Long id, Integer grade) {
+        repository.gradeUniversity(id, grade);
+    }
 }

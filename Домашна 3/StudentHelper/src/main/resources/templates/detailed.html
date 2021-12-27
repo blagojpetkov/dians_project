@@ -19,7 +19,7 @@
 <header>
     <img id="hamburger" src="/hamburger.png" onclick="hamburgerClick()" height="50px">
     <a style="text-decoration: none;" href="/home"><p id="title">СТУДЕНТСКИ ПОМОШНИК</p></a>
-    <div><a id="home" href="/home" class="btn btn-outline-light">Home</a><a id="about" href="/home/about" class="btn btn-outline-light">About</a></div>
+    <div><a id="home" href="/home" class="btn btn-outline-light">Дома</a><a id="about" href="/home/about" class="btn btn-outline-light">Контакт</a></div>
 </header>
 <div id="sidebar" hidden>
     <button class="btn btn-outline-dark" onclick="geolocation()" id="getl">Најди ја мојата локација</button><br>
@@ -48,10 +48,22 @@
 <div id="container">
 <div id="left">
     <h3 class="text-center" th:text="${university.name}"></h3>
-    <div id="imgContainer"><img th:src="${university.imageUrl}"></div><br>
+    <div id="imgContainer"><img referrerpolicy="no-referrer" class="logo" th:src="${university.imageUrl}"></div><br>
     <div class="info" th:text="'Категорија: ' + ${university.type}"></div>
     <div class="info" th:text="'Град: ' +${university.city}"></div>
     <div class="info" th:text="'Адреса: ' +${university.address}"></div><br>
+    <div class="info" th:text="'Оцена: ' + ${university.grade} + ' според ' + ${university.evaluators} + ' оценувач/и'"></div>
+    <div id="grades" th:if="${!graded}">
+        <a th:href="'/home/grade/' + ${university.id} + '/1'"><img title="Оцена 1" id="1" class="star" src="/star.png"></a>
+        <a th:href="'/home/grade/' + ${university.id} + '/2'"><img title="Оцена 2" id="2" class="star" src="/star.png"></a>
+        <a th:href="'/home/grade/' + ${university.id} + '/3'"><img title="Оцена 3" id="3" class="star" src="/star.png"></a>
+        <a th:href="'/home/grade/' + ${university.id} + '/4'"><img title="Оцена 4" id="4" class="star" src="/star.png"></a>
+        <a th:href="'/home/grade/' + ${university.id} + '/5'"><img title="Оцена 5" id="5" class="star" src="/star.png"></a>
+        <p class="text-danger">Внеси оцена за универзитетот избирајќи една од ѕвездите</p>
+    </div>
+    <div id="done" th:if="${graded}">
+        <p class="text-success">Успешно го оценивте дадениот универзитет!</p>
+    </div>
     <div class="info description" th:text="${university.description}"></div><br>
     <div class="info description" th:text="'Професори: ' +${university.professors}"></div>
     <input type="hidden" id="latitude" th:value="${university.latitude}">
@@ -68,7 +80,6 @@
 </div>
 
 <footer>
-    <a href="/home/about">За нас</a>
     <a href="/home/about">Контакт</a>
     <p>© 2021 Copyright: StudentHelper</p>
     <a href="/home/about">Информации за сајтот</a>

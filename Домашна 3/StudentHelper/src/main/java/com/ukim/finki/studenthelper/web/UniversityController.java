@@ -21,12 +21,6 @@ public class UniversityController {
         return universityService.getAllUniversities();
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<University> getUniversityWithId(@PathVariable Long id){
-//        return universityService.getUniversityById(id)
-//                .map(university -> ResponseEntity.ok().body(university)).orElseGet(()->ResponseEntity.notFound().build());
-//
-//    }
 
     @GetMapping("/keyword/{keyword}")
     public List<University> getUniversitiesWithKeyword(@PathVariable String keyword){

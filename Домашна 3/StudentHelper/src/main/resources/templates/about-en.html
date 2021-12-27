@@ -2,12 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About the team</title>
+    <title>За тимот</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/about.css">
 </head>
 <body>
+
+<header>
+    <img id="hamburger" src="/hamburger.png" onclick="hamburgerClick()" height="50px">
+    <a style="text-decoration: none;" href="/home"><p id="title">STUDENT HELPER</p></a>
+    <div><a id="home" href="/home" class="btn btn-outline-light">Home</a><a id="about" href="/home/about" class="btn btn-outline-light">About</a></div>
+</header>
+
+<div id="sidebar" hidden>
+    <button disabled class="btn btn-outline-dark" onclick="geolocation()" id="getl">Find my location</button><br>
+    <select disabled class="form-select" id="profile">
+        <option value="driving-car">Car</option>
+        <option value="foot-walking">Walking</option>
+        <option value="cycling-regular">Bicycle</option>
+        <option value="wheelchair">Wheelchair</option>
+    </select>
+    <button class="btn btn-outline-dark" onclick="search()" id="search" disabled>Find route</button><br>
+    <br><br>
+    <div id="instructions">
+        <h6>Instruction manual:</h6>
+        <br>
+        <p>Choose a university from the map</p>
+        <p>Press on <strong>Find my location</strong></p>
+        <p>Allow access to your location</p>
+        <p>Choose one of the transport options</p>
+        <p>Press <strong>Find route</strong></p>
+    </div>
+    <br><br>
+    <h4>Show universities by keyword</h4>
+    <input disabled type="text" class="form-control" id="keyword" placeholder="Машински, Скопје, Медицина...">
+    <button disabled id="keywordbutton" class="btn btn-outline-dark" onclick="keyword()">Search using a keyword</button>
+</div>
+
+
+
+
+
+<div id="container">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/avatar.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Blagoj Petkov</h5>
+            <p class="card-text">Student at FCSE. blagojpetkov@gmail.com</p>
+            <a href="https://github.com/blagojpetkov" class="btn btn-primary">Open GitHub profile</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/avatar.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Maja Petrova</h5>
+            <p class="card-text">Student at FCSE. majapetrova@gmail.com</p>
+            <a href="https://github.com/mp161616" class="btn btn-primary">Open GitHub profile</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/avatar.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Angela Mukanova</h5>
+            <p class="card-text">Student at FCSE. angelamukanova@gmail.com</p>
+            <a href="https://github.com/angelamukanova" class="btn btn-primary">Open GitHub profile</a>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <a href="/home/about">Contact</a>
+    <p>© 2021 Copyright: StudentHelper</p>
+    <a href="/home/about">Information about the site</a>
+    <a href="/home/language/mk">Македонски</a>
+    <a href="/home/language/en">English</a>
+</footer>
 <script src="/about.js"></script>
 </body>
 </html>

@@ -117,7 +117,7 @@ and (max-device-width : 480px) {
 #container{
     display: flex;
     justify-content: center;
-    height: 800px;
+    height: 900px;
 }
 #left{
     width: 700px;
@@ -136,7 +136,7 @@ and (max-device-width : 480px) {
 h6{
     font-weight: bold;
 }
-#left img{
+.logo{
     height: 200px;
 }
 #imgContainer{
@@ -146,4 +146,8 @@ h6{
 .description{
     font-size: 12px;
     margin-right: 10px;
+}
+.star{
+    width: 20px;
+    height: 20px;
 }
