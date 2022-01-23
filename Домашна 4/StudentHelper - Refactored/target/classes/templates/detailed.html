@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/detailed.css">
+<div id="container">
+<div id="left">
+    <h3 class="text-center" th:text="${university.name}"></h3>
+    <div id="imgContainer"><img referrerpolicy="no-referrer" class="logo" th:src="${university.imageUrl}"></div><br>
+    <div class="info" th:text="'Категорија: ' + ${university.type}"></div>
+    <div class="info" th:text="'Град: ' +${university.city}"></div>
+    <div class="info" th:text="'Адреса: ' +${university.address}"></div><br>
+    <div class="info" th:text="'Оцена: ' + ${university.grade} + ' според ' + ${university.evaluators} + ' оценувач/и'"></div>
+    <div id="grades" th:if="${!graded}">
+        <a th:href="'/home/grade/' + ${university.id} + '/1'"><img title="Оцена 1" id="1" class="star" src="/star.png"></a>
+        <a th:href="'/home/grade/' + ${university.id} + '/2'"><img title="Оцена 2" id="2" class="star" src="/star.png"></a>
+        <a th:href="'/home/grade/' + ${university.id} + '/3'"><img title="Оцена 3" id="3" class="star" src="/star.png"></a>
+        <a th:href="'/home/grade/' + ${university.id} + '/4'"><img title="Оцена 4" id="4" class="star" src="/star.png"></a>
+        <a th:href="'/home/grade/' + ${university.id} + '/5'"><img title="Оцена 5" id="5" class="star" src="/star.png"></a>
+        <p class="text-danger">Внеси оцена за универзитетот избирајќи една од ѕвездите</p>
+    </div>
+    <div id="done" th:if="${graded}">
+        <p class="text-success">Успешно го оценивте дадениот универзитет!</p>
+    </div>
+    <div class="info description" th:text="${university.description}"></div><br>
+    <div class="info description" th:text="'Професори: ' +${university.professors}"></div>
+    <input type="hidden" id="latitude" th:value="${university.latitude}">
+    <input type="hidden" id="longitude" th:value="${university.longitude}">
+</div>
+<div id="right">
+    <div id="map"></div>
+    <div id="information" hidden>
+        <h6>Информации за рутата кон универзитетот</h6>
+        <p id="distance"></p>
+        <p id="duration"></p>
+    </div>
+</div>
+</div>
+<script src="/detailed.js"></script>

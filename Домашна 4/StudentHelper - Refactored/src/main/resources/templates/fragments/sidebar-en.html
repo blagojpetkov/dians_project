@@ -1,0 +1,32 @@
+
+<div id="sidebar" hidden>
+    <button class="btn btn-outline-dark" onclick="geolocation()" id="getl">Find my location</button><br>
+    <select class="form-select" id="profile">
+        <option value="driving-car">Car</option>
+        <option value="foot-walking">Walking</option>
+        <option value="cycling-regular">Bicycle</option>
+        <option value="wheelchair">Wheelchair</option>
+    </select>
+    <button class="btn btn-outline-dark" onclick="search()" id="search" disabled>Find route</button><br>
+    <br><br>
+    <div id="instructions">
+        <h6>Instruction manual:</h6>
+        <br>
+        <p>Choose a university from the map</p>
+        <p>Press on <strong>Find my location</strong></p>
+        <p>Allow access to your location</p>
+        <p>Choose one of the transport options</p>
+        <p>Press <strong>Find route</strong></p>
+    </div>
+    <div id="information" hidden>
+        <h4>Information about the route to the university</h4>
+        <br>
+        <h6 id="distance"></h6>
+        <h6 id="duration"></h6>
+        <br>
+    </div>
+    <br><br>
+    <h4>Show universities by keyword</h4>
+    <input type="text" class="form-control" id="keyword" placeholder="Машински, Скопје, Медицина...">
+    <button id="keywordbutton" class="btn btn-outline-dark" onclick="keyword()">Search using a keyword</button>
+</div>
