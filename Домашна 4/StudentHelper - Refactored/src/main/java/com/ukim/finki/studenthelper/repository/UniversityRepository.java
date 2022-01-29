@@ -1,54 +1,30 @@
 package com.ukim.finki.studenthelper.repository;
 
+import com.ukim.finki.studenthelper.model.Database;
 import com.ukim.finki.studenthelper.model.University;
 import org.springframework.stereotype.Repository;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Repository
 public class UniversityRepository {
-    public static List<University> universities;
-
-
 
     public void invalidateUniversities(){
-        universities = null;
+        Database.getInstance().invalidate();
     }
 
     public static List<University> getAllUniversities() {
-        if(universities==null){
-        File f = new File("src/main/java/com/ukim/finki/studenthelper/database/universities.csv");
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(f));
-            universities = br.lines().map(x->{
-                String [] components = x.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                components = Arrays.stream(components).map(string->{
-                    if(string.startsWith("\"") && string.endsWith("\""))
-                        string = string.substring(1, string.length()-1);
-                    return string;
-                }).toArray(String[]::new);
-                return new University(Long.parseLong(components[0]), Double.parseDouble(components[1]), Double.parseDouble(components[2]), components[3], components[4], components[5], components[6], components[7], components[8], components[9], components[10], components[11]);
-            }).collect(Collectors.toList());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        }
-        }
-
-        return universities;
+        return Database.getInstance().getUniversities();
     }
 
     public Optional<University> getUniversityById(Long id) {
-        return UniversityRepository.getAllUniversities().stream().filter(x->x.id.equals(id)).findFirst();
+        return Database.getInstance().getUniversities().stream().filter(x->x.id.equals(id)).findFirst();
     }
 
     public List<University> getUniversitiesWithKeyword(String keyword) {
-        return UniversityRepository.getAllUniversities().stream().filter(x->x.name.toLowerCase().contains(keyword.toLowerCase())
+        return Database.getInstance().getUniversities().stream().filter(x->x.name.toLowerCase().contains(keyword.toLowerCase())
         || x.type.toLowerCase().contains(keyword.toLowerCase()) || x.city.toLowerCase().contains(keyword.toLowerCase()))
                 .collect(Collectors.toList());
     }
@@ -68,6 +44,7 @@ public class UniversityRepository {
                         writer.write(components[0] + "," + components[1] + "," + components[2] + "," + components[3] + "," + components[4] +
                                 "," + components[5] + "," + components[6] + "," + components[7] + "," + components[8] +
                                 "," + components[9] + "," + String.format("%.2f", ((Double.parseDouble(components[10]) * Integer.parseInt(components[11]) + grade) / (Integer.parseInt(components[11]) + 1))) + "," + (Integer.parseInt(components[11]) + 1) + "\n");
+                        // if we find the id of the university we want to grade, we calculate the average of the new grade and append it to the university
                     }
                     else{
                         writer.write(string+"\n");
@@ -101,6 +78,7 @@ public class UniversityRepository {
                         writer.write(string+"\n");
                 }
                 writer.write(String.format("%d,%f,%f,%s,%s,%s,%s,\"%s\",\"%s\",\"%s\",0,0\n", id, latitude, longitude, name, imageUrl, type, city, address, description, professors));
+                //writes the new university to the file
                 fileReader.close();
                 br.close();
                 writer.close();

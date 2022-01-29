@@ -41,6 +41,14 @@ public class UniversityServiceImpl implements UniversityService {
 
     @Override
     public void addNewUniversityToList(double latitude, double longitude, String name, String imageUrl, String type, String city, String address, String description, String professors) {
+        name = name.replace("\"", "“");
+        imageUrl = imageUrl.replace("\"", "“");
+        type = type.replace("\"", "“");
+        city = city.replace("\"", "“");
+        address = address.replace("\"", "“");
+        description = description.replace("\"", "“");
+        professors = professors.replace("\"", "“");
+        //to protect database from failing if a user enters '"' in the university parameters
         repository.addNewUniversityToList(Math.abs(random.nextLong()/10000), latitude, longitude, name, imageUrl, type, city, address, description, professors);
     }
 }

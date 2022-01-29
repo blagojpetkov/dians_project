@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3eca6a99-2639-4b68-ba80-99c5882947c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer-en.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header-en.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/sidebar-en.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/master-template-en.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/master-template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ukim/finki/studenthelper/database/universities.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ukim/finki/studenthelper/database/universities.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ukim/finki/studenthelper/repository/UniversityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ukim/finki/studenthelper/repository/UniversityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ukim/finki/studenthelper/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ukim/finki/studenthelper/web/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about-en.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about-en.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detailed-en.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/detailed-en.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/detailed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home-en.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home-en.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ukim/finki/studenthelper/repository/UniversityRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ukim/finki/studenthelper/repository/UniversityRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ukim/finki/studenthelper/service/impl/UniversityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ukim/finki/studenthelper/service/impl/UniversityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ukim/finki/studenthelper/web/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ukim/finki/studenthelper/web/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home-en.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home-en.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
-    </list>
+    <list default="true" id="0dc11cef-853e-470e-91ed-9681fd8611dc" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +13,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,14 +28,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="ProjectId" id="244AAqbB7PoD65Y10okfz5Ueuzd" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="247LCepjCihM5iWgWCBxDFuICXf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -68,13 +41,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/fragments" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\B5\IdeaProjects\StudentHelper - Refactored\src\main\resources\templates\fragments" />
-      <recent name="C:\Users\B5\IdeaProjects\StudentHelper - Refactored\src\main\resources\templates" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="StudentHelperApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -88,16 +54,33 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3eca6a99-2639-4b68-ba80-99c5882947c0" name="Changes" comment="" />
-      <created>1642879347938</created>
+      <changelist id="0dc11cef-853e-470e-91ed-9681fd8611dc" name="Changes" comment="" />
+      <created>1642976554710</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1642879347938</updated>
-      <workItem from="1642879349722" duration="1774000" />
-      <workItem from="1642891021785" duration="515000" />
-      <workItem from="1642891568268" duration="166000" />
-      <workItem from="1642891876357" duration="2988000" />
+      <updated>1642976554710</updated>
+      <workItem from="1642976557178" duration="1607000" />
+      <workItem from="1643105284848" duration="1640000" />
+      <workItem from="1643107767065" duration="24000" />
+      <workItem from="1643113129312" duration="5222000" />
+      <workItem from="1643247648926" duration="694000" />
+      <workItem from="1643251436392" duration="3684000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1642976801341</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642976801341</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <created>1643116373882</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1643116373882</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,5 +97,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
