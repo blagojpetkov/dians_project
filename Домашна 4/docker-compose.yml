@@ -1,0 +1,38 @@
+version: "3"
+services:
+  discovery-server:
+    image: discovery-server:latest
+    ports:
+    - "8761:8761"
+    networks:
+    - webnet
+  microservice1:
+    image: microservice1:latest
+    ports:
+    - "8081:8081"
+    depends_on:
+      - discovery-server
+      - microservice2
+      - microservice3
+    networks:
+    - webnet
+  microservice2:
+    image: microservice2:latest
+    ports:
+    - "8082:8082"
+    depends_on:
+      - discovery-server
+      - microservice3
+    networks:
+    - webnet
+  microservice3:
+    image: microservice3:latest
+    ports:
+    - "8083:8083"
+    depends_on:
+      - discovery-server
+    networks:
+    - webnet
+
+networks:
+  webnet:
